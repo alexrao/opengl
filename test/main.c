@@ -3,27 +3,58 @@
 #include <math.h>
 #include <stdio.h>
 
-const GLint n = 20;
-const GLfloat R = 0.5f;
 const GLfloat Pi = 3.1415926f;
+//void display(void)
+//{
+//    int i;
+//    glClear(GL_COLOR_BUFFER_BIT);
+//    //glRectf(-0.5f, -0.5f, 0.8f, 0.8f);
+//
+//    glBegin(GL_POINTS);
+//
+//    glVertex2f(0, 0);
+//
+//    for(i=0; i<n; i++)
+//    {
+//        //glVertex2f(R*cos(2*Pi/n*i), R*sin(2*Pi/n*i));
+//        glVertex2f(R*cos(2*Pi/n*i), R*sin(2*Pi/n*i));
+//        //glVertex2f(R*cos(angle), R/n*i);
+//    }
+//    glVertex2f(R*cos(0), R*sin(0));
+//    glEnd();
+//
+//    // Display i
+//    glFlush();
+//
+//}
+
 
 void display(void)
 {
-    int i;
+    GLfloat a = 1/(2-2*cos(72*Pi/180));
+    GLfloat bx = a *cos(18*Pi/180);
+    GLfloat by = a *sin(18*Pi/180);
+
+    GLfloat cy = -a *sin(18*Pi/180);
+
+    GLfloat PointA[2] = {0, a},
+            PointB[2] = {bx, by},
+            PointC[2] = {0.5, cy},
+            PointD[2] = {-0.5, cy},
+            PointE[2] = {-bx, by};
+
+
     glClear(GL_COLOR_BUFFER_BIT);
     //glRectf(-0.5f, -0.5f, 0.8f, 0.8f);
 
-    //glBegin(GL_POINTS);
-    glBegin(GL_TRIANGLE_FAN);
+    glBegin(GL_LINE_LOOP);
 
-    glVertex2f(0, 0);
+    glVertex2fv(PointA);
+    glVertex2fv(PointC);
+    glVertex2fv(PointE);
+    glVertex2fv(PointB);
+    glVertex2fv(PointD);
 
-    for(i=0; i<n; i++)
-    {
-        glVertex2f(R*cos(2*Pi/n*i), R*sin(2*Pi/n*i));
-        //glVertex2f(R*cos(angle), R/n*i);
-    }
-    glVertex2f(R*cos(0), R*sin(0));
     glEnd();
 
     // Display i
