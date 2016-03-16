@@ -4,6 +4,8 @@
 
 CFLAGS = -lglut -lGL -lGLU -lm
 
+CFLAGS += -std=c99
+
 CC = gcc
 
 APPLICATION := main.bin
@@ -28,7 +30,7 @@ $(APPLICATION): $(OBJS)
 
 %.o: %.c
 	@echo [Compile $^ ...]
-	$(CC)  -c $^ -o $@ $(CLASSFLAG)
+	$(CC)  -c $^ -o $@ $(CFLAGS)
 
 clean:
 	rm $(APPLICATION)
