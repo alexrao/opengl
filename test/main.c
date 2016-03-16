@@ -10,8 +10,11 @@ void display(void)
 
     glClear(GL_COLOR_BUFFER_BIT);
 
-    glBegin(GL_LINES);
 
+    // ---------------
+
+    glLineWidth(5.0f);
+    glBegin(GL_LINES);
     // x 轴
     glVertex2f(-1.0f, 0.0f);
     glVertex2f(1.0f, 0.0f);
@@ -21,14 +24,21 @@ void display(void)
 
     glEnd();
 
+    // --------------
+
+    glLineWidth(2.0f);
+    glEnable(GL_LINE_STIPPLE);
+    glLineStipple(1, 0xFF);
+
     glBegin(GL_LINE_STRIP);
     for(GLfloat x=-1.0f/factor; x<1.0f/factor; x += 0.01f)
     {
         glVertex2f(x*factor, 5*sin(x)*factor);
     }
     glEnd();
+    // ---------------
 
-    // Display i
+    // Display
     glFlush();
 
 }
