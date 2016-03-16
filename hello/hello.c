@@ -1,5 +1,6 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
+#include "test.h"
 
 
 void display(void) 
@@ -19,6 +20,7 @@ void display(void)
 int main(int argc, char **argv) 
 {
 
+    fun();
     glutInit(&argc, argv);
 
     /*Setting up The Display

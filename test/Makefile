@@ -2,14 +2,14 @@
 
 
 
-CFLAGS = -lglut -lGL -lGLU
+CFLAGS = -lglut -lGL -lGLU -lm
 
 CC = gcc
 
-APPLICATION := hello.bin
+APPLICATION := main.bin
 
-SOURCE := hello.c
-SOURCE += test.c
+SOURCE := main.c
+#SOURCE += test.c
 
 
 
