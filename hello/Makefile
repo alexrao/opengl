@@ -1,7 +1,7 @@
 #g++ hello.c -o hello -lglut -lGL -lGLU
 
 SOURCE := hello.c
-OBJ = hello
+OBJ = hello.bin
 CLASSFLAG = -lglut -lGL -lGLU
 CC = gcc
 bin:
