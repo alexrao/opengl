@@ -13,7 +13,8 @@ void display(void)
     glClear(GL_COLOR_BUFFER_BIT);
     //glRectf(-0.5f, -0.5f, 0.8f, 0.8f);
 
-    glBegin(GL_POINTS);
+    //glBegin(GL_POINTS);
+    glBegin(GL_TRIANGLE_FAN);
 
     glVertex2f(0, 0);
 
@@ -22,6 +23,7 @@ void display(void)
         glVertex2f(R*cos(2*Pi/n*i), R*sin(2*Pi/n*i));
         //glVertex2f(R*cos(angle), R/n*i);
     }
+    glVertex2f(R*cos(0), R*sin(0));
     glEnd();
 
     // Display i
